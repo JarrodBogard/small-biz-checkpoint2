@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
 export default function Navigation(props) {
+  // console.log(document.cookie, "navigation");
   return props.isLogged ? (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -44,7 +45,6 @@ export default function Navigation(props) {
           </Link>
         </Toolbar>
       </AppBar>
-      {/* {props.isLogged ? `${props.user.username} is logged in` : "not logged"} */}
     </Box>
   );
 }

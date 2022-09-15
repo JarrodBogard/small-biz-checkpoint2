@@ -9,7 +9,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { removeListing } from "../redux/action";
+import { filterListing, removeListing } from "../redux/action";
 import { Link } from "react-router-dom";
 
 export default function Listings(props) {
@@ -23,12 +23,16 @@ export default function Listings(props) {
     props.removeListing(index);
   };
 
-  // return isAuth ? (
+  const handleDetails = (row) => {
+    console.log(row, props, "handleDetails");
+    props.filterListing(row);
+    console.log(props.detailsList);
+  };
+
   return props.isLogged ? (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
-          (Authenticated)
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell align="left">Description</TableCell>
@@ -39,10 +43,10 @@ export default function Listings(props) {
         <TableBody>
           {props.listings.map((row, index) => (
             <TableRow
-              key={row.id}
+              key={row.name + row.id}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <Link to="/details">
+              <Link to="/details" onClick={() => handleDetails(row)}>
                 <TableCell component="th" scope="row">
                   {row.name}
                 </TableCell>
@@ -72,14 +76,16 @@ export default function Listings(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.listings.map((row) => (
+          {props.listings.map((row, index) => (
             <TableRow
-              key={row.name}
+              key={row.name + row.id}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
+              <Link to="/details" onClick={() => handleDetails(row)}>
+                <TableCell component="th" scope="row">
+                  {row.name}
+                </TableCell>
+              </Link>
               <TableCell align="left">{row.description}</TableCell>
               <TableCell align="right">{row.hours}</TableCell>
               <TableCell align="right">{row.address}</TableCell>

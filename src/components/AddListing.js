@@ -25,8 +25,14 @@ const AddListing = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = { ...state };
+    if (
+      !payload.name ||
+      !payload.address ||
+      !payload.hours ||
+      !payload.description
+    )
+      return;
     payload.id = props.listings.length + 1;
-    console.log("listings", props.listings, payload);
     props.addListing(payload);
     setState({
       name: "",
@@ -37,7 +43,7 @@ const AddListing = (props) => {
   };
 
   useEffect(() => {
-    console.log(state);
+    // console.log(state);
   }, [state]);
 
   return (
@@ -50,7 +56,7 @@ const AddListing = (props) => {
         placeholder="Name"
         type="text"
         autoComplete="off"
-        required
+        required="true"
         value={state.name}
       />
 
@@ -62,7 +68,7 @@ const AddListing = (props) => {
         placeholder="Address"
         type="text"
         autoComplete="off"
-        required
+        required="true"
         value={state.address}
       />
       <TextField
@@ -73,7 +79,7 @@ const AddListing = (props) => {
         placeholder="Hours"
         type="text"
         autoComplete="off"
-        required
+        required="true"
         value={state.hours}
       />
       <TextField
@@ -84,7 +90,7 @@ const AddListing = (props) => {
         placeholder="Description"
         type="text"
         autoComplete="off"
-        required
+        required="true"
         value={state.description}
       />
       <Button variant="contained" onClick={(e) => handleSubmit(e)}>

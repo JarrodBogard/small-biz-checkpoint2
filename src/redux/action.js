@@ -25,3 +25,10 @@ export const removeListing = (index) => {
     value: index,
   };
 };
+
+export const filterListing = (listing) => {
+  return {
+    type: "FILTER_LISTING",
+    value: listing
+  }
+}

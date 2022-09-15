@@ -35,7 +35,7 @@ const Login = (props) => {
   };
 
   useEffect(() => {
-    console.log(state, props.isLogged);
+    // console.log(state, props.isLogged);
   }, [state, props.isLogged]);
 
   return (

@@ -31,4 +31,19 @@ const isLogged = (state = false, action) => {
   }
 };
 
-export default combineReducers({ user, listings, isLogged, map });
+const detailsList = (state = [], action) => {
+  switch (action.type) {
+    case "FILTER_LISTING":
+      const copy = state;
+      if (copy.length) {
+        copy.splice(0, 1);
+        copy.push(action.value);
+      } else copy.push(action.value);
+      // copy.length ? copy.splice(0, 1) : copy.push(action.value);
+      return copy;
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({ user, listings, isLogged, detailsList, map });

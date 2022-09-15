@@ -1,4 +1,4 @@
-export default {
+const state = {
   user: {
     username: "user1",
     email: "user1@test.com",
@@ -32,7 +32,10 @@ export default {
   ],
   map: {},
   isLogged: false,
+  detailsList: [],
 };
+
+export default state;
 
 // {
 //   id: 3,
