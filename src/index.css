@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+/* navigation page rules  */
+
+.logged-heading {
+  margin-left: 22px;
+  color: #1976d2;
+}
+
 .login {
   display: flex;
   flex-direction: column;
@@ -29,9 +36,15 @@ code {
   gap: 15px;
 }
 
+/* addlisting page rules  */
+.form-map-container {
+  display: flex;
+  margin: auto 50px;
+  margin-top: 50px;
+}
+
 .add-listing {
   display: flex;
-  /* align-items: flex-start; */
   flex-direction: column;
   text-align: center;
   margin: 50px auto;
@@ -39,6 +52,90 @@ code {
   gap: 15px;
 }
 
-.text-field {
-  padding: 20px;
+.map-container {
+  width: 100%;
+  height: 50vh;
+}
+
+.add-map-listing-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 50vw;
+  /* width: 50%; */
+}
+
+.ul-listing-display {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: grey;
+  list-style: none;
+  /* text-align: center; */
+}
+
+.list-items-display {
+  padding: 5px 0;
+}
+
+.list-items-display > h4 {
+  display: inline;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.list-items-display > p {
+  margin: 0;
+  width: 100%;
+  overflow-wrap: break-word;
+  color: black;
+  display: inline;
+  /* word-wrap: break-word; */
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.ul-details-display {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  margin: 50px 50px;
+  width: 50%;
+}
+
+.ul-details-display > li {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  padding-bottom: 10px;
+}
+
+.details-map-container {
+  width: 100%;
+  border: solid 5px #1976d2;
+  border-radius: 5px;
+}
+
+/* listing page rules  */
+
+.main-listing-container {
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  width: 80vw;
+  justify-content: center;
 }

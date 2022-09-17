@@ -32,3 +32,17 @@ export const filterListing = (listing) => {
     value: listing
   }
 }
+
+export const setLatitude = (latitude) => {
+  return {
+    type: "SET_LATITUDE",
+    value: latitude
+  }
+}
+
+export const setLongitude = (longitude) => {
+  return {
+    type: "SET_LONGITUDE",
+    value: longitude
+  }
+}

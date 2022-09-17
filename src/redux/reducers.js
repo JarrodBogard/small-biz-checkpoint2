@@ -46,4 +46,30 @@ const detailsList = (state = [], action) => {
   }
 };
 
-export default combineReducers({ user, listings, isLogged, detailsList, map });
+const latitude = (state = null, action) => {
+  switch (action.type) {
+    case "SET_LATITUDE":
+      return action.value;
+    default:
+      return state;
+  }
+};
+
+const longitude = (state = null, action) => {
+  switch (action.type) {
+    case "SET_LONGITUDE":
+      return action.value;
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({
+  user,
+  listings,
+  isLogged,
+  detailsList,
+  latitude,
+  longitude,
+  map,
+});
