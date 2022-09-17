@@ -5,12 +5,12 @@ import Listings from "./containers/Listings";
 import Login from "./containers/Login";
 import Details from "./containers/Details";
 // import { Navigate } from "react-router-dom";
-// import cookie from "cookie";
+import cookie from "cookie";
 
-// const checkAuth = () => {
-//   const cookies = cookie.parse(document.cookie);
-//   return cookies["loggedIn"] ? true : false;
-// };
+export const checkAuth = () => {
+  const cookies = cookie.parse(document.cookie);
+  return cookies["loggedIn"] ? true : false;
+};
 
 // const ProtectedRoute = (props) => {
 //   const { component: Component } = props;

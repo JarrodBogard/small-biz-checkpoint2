@@ -29,7 +29,7 @@ const Login = (props) => {
         loginName: "",
         loginPass: "",
       });
-      document.cookie = "loggedIn=true;max-age=30";
+      document.cookie = "loggedIn=true;max-age=10";
       navigate("/");
     }
   };

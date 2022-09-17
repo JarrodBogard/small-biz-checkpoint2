@@ -9,11 +9,19 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Link } from "react-router-dom";
+// import { checkAuth } from "../Router";
 
 export default function Listings(props) {
   const handleClick = (index) => {
     props.removeListing(index);
   };
+
+  // const ProtectedComponent = (props) => {
+  //   const { component: Component } = props;
+  //   return checkAuth() ? (
+  //     <Component onClick={() => handleClick(props.index)} />
+  //   ) : null;
+  // };
 
   const handleDetails = (row) => {
     const encodedAddress = encodeURI(row.address);
@@ -72,6 +80,10 @@ export default function Listings(props) {
                 <TableCell align="right">
                   <Grid style={{ color: "red", cursor: "pointer" }} item xs={8}>
                     {/* delete icon */}
+                    {/* <ProtectedComponent
+                      index={index}
+                      component={DeleteForeverIcon}
+                    /> */}
                     <DeleteForeverIcon onClick={() => handleClick(index)} />
                   </Grid>
                 </TableCell>

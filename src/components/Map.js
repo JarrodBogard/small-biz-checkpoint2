@@ -26,3 +26,5 @@ const MapComponent = ({ latitude, longitude }) => {
 };
 
 export default Map;
+
+// make onclick function handler that uses geocode handler to get lat and lng and pass lng to fetch and then uses lat and long in url
