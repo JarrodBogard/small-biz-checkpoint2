@@ -17,7 +17,7 @@ export const checkAuth = () => {
 //   return checkAuth() ? <Component /> : <Navigate to="/login" />;
 // };
 
-const Router = (props) => {
+const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Listings />} />

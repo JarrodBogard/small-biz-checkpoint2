@@ -8,6 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 // import { checkAuth } from "../Router";
 
@@ -69,11 +70,15 @@ export default function Listings(props) {
                 key={row.name + row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <Link to="/details" onClick={() => handleDetails(row)}>
+                <Button
+                  component={Link}
+                  to={"/details"}
+                  onClick={() => handleDetails(row)}
+                >
                   <TableCell component="th" scope="row">
                     {row.name}
                   </TableCell>
-                </Link>
+                </Button>
                 <TableCell align="left">{row.description}</TableCell>
                 <TableCell align="right">{row.hours}</TableCell>
                 <TableCell align="right">{row.address}</TableCell>
@@ -111,11 +116,15 @@ export default function Listings(props) {
                 key={row.name + row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <Link to="/details" onClick={() => handleDetails(row)}>
+                <Button
+                  component={Link}
+                  to={"/details"}
+                  onClick={() => handleDetails(row)}
+                >
                   <TableCell component="th" scope="row">
                     {row.name}
                   </TableCell>
-                </Link>
+                </Button>
                 <TableCell align="left">{row.description}</TableCell>
                 <TableCell align="right">{row.hours}</TableCell>
                 <TableCell align="right">{row.address}</TableCell>
