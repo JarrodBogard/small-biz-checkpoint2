@@ -1,7 +1,7 @@
 const state = {
   user: {
-    username: "user1",
-    email: "user1@test.com",
+    username: "user",
+    email: "user@test.com",
     password: "password",
   },
   listings: [

@@ -73,8 +73,8 @@ const AddListing = (props) => {
   }, [state]);
 
   return (
-    <div className="form-map-container">
-      <form className="add-listing">
+    <main className="form-map-container">
+      <form className="add-listing" onSubmit={(e) => handleSubmit(e)}>
         <TextField
           onChange={(e) => handleChange(e)}
           name="name"
@@ -120,7 +120,7 @@ const AddListing = (props) => {
           required={true}
           value={state.description}
         />
-        <Button variant="contained" onClick={(e) => handleSubmit(e)}>
+        <Button type="submit" variant="contained">
           Add Listing
         </Button>
       </form>
@@ -141,7 +141,7 @@ const AddListing = (props) => {
           </li>
         </ul>
       </div>
-    </div>
+    </main>
   );
 };
 

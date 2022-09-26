@@ -39,9 +39,9 @@ const Login = (props) => {
   }, [state, props.isLogged]);
 
   return (
-    <form className="login">
-      {/* <form className="login" onSubmit={(e) => handleSubmit(e)}> */}
+    <form className="login" onSubmit={handleSubmit}>
       <Box className="login-box">
+        {/* <Box className="login-box" component="form" onSubmit={handleSubmit}> */}
         <TextField
           onChange={(e) => handleChange(e)}
           name="loginName" // match name in state
@@ -51,8 +51,6 @@ const Login = (props) => {
           type="text"
           autoComplete="off"
           value={state.loginName}
-          // onChange={(e) => setState({ loginName: e.target.value })}
-          //   label={state.username ? "" : "Username"}
         />
 
         <TextField
@@ -67,7 +65,7 @@ const Login = (props) => {
           // onChange={(e) => setState({ loginPass: e.target.value })}
           //   label={state.password ? "" : "Password"}
         />
-        <Button variant="contained" onClick={(e) => handleSubmit(e)}>
+        <Button type="submit" variant="contained">
           Login
         </Button>
       </Box>

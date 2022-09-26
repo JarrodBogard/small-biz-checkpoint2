@@ -1,6 +1,11 @@
 import { connect } from "react-redux";
 import Listings from "../components/Listings";
-import { filterListing, removeListing, setLatitude, setLongitude } from "../redux/action";
+import {
+  filterListing,
+  removeListing,
+  setLatitude,
+  setLongitude,
+} from "../redux/action";
 
 const mapStateToProps = (state) => {
   return {
@@ -8,7 +13,7 @@ const mapStateToProps = (state) => {
     isLogged: state.isLogged,
     detailsList: state.detailsList,
     latitude: state.latitude,
-    longitude: state.longitude
+    longitude: state.longitude,
   };
 };
 
@@ -17,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
     removeListing: (index) => dispatch(removeListing(index)),
     filterListing: (listing) => dispatch(filterListing(listing)),
     setLatitude: (latitude) => dispatch(setLatitude(latitude)),
-    setLongitude: (longitude) => dispatch(setLongitude(longitude))
+    setLongitude: (longitude) => dispatch(setLongitude(longitude)),
   };
 };
 
